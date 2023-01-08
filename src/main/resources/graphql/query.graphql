@@ -1,0 +1,28 @@
+query GetContinentByCode($code: ID!) {
+    continent(code: $code) {
+        code
+        name
+        countries {
+            code
+        }
+    }
+}
+
+query GetContinents($codes: [String!]!) {
+    continents(filter: {code: {in: $codes}}) {
+        code
+        name
+        countries {
+            code
+        }
+    }
+}
+
+query GetContinentByCountryCodes($codes: [String!]!) {
+    countries(filter: {code: {in: $codes}}) {
+        code
+        continent{
+            code
+        }
+    }
+}

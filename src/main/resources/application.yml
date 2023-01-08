@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: "restful-over-graphql"
+
+server:
+  # Serve the application at 8080.
+  port: 8080
+  servlet:
+    # Prefix all routes with /api.
+    contextPath: /api
+
+graphql-server:
+  endpoint: 'https://countries.trevorblades.com/graphql'
+
+logging:
+  file:
+    name: logs/restful-over-graphql.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    root: WARN
+    org.springframework.web: WARN
+    fun.reed.restfulovergraphql: WARN
+
